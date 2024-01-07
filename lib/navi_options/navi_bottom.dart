@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '../DestinationObj.dart';
+import '../destination_obj.dart';
 
 class NaviBottom extends StatefulWidget {
-  int currIndex;
-  List<Widget> children;
-  List<DestinationObj> destination;
-  NaviBottom(
+  final int currIndex;
+  final List<Widget> children;
+  final List<DestinationObj> destination;
+  const NaviBottom(
       {super.key,
         required this.currIndex,
         required this.children,
@@ -17,12 +17,13 @@ class NaviBottom extends StatefulWidget {
 }
 
 class _NaviBottomState extends State<NaviBottom> {
+  int? _currIndex;
   List<NavigationDestination> items = [];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    _currIndex = widget.currIndex;
     initializer();
   }
 
@@ -45,15 +46,15 @@ class _NaviBottomState extends State<NaviBottom> {
     return SafeArea(
       child: Scaffold(
         body: Center(
-          child: widget.children.elementAt(widget.currIndex),
+          child: widget.children.elementAt(_currIndex!),
         ),
         bottomNavigationBar: NavigationBar(
           onDestinationSelected: (selectedIndex){
             setState(() {
-              widget.currIndex = selectedIndex;
+              _currIndex = selectedIndex;
             });
           },
-          selectedIndex: widget.currIndex,
+          selectedIndex: _currIndex!,
           destinations: items,
         ),
       ),

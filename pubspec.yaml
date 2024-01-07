@@ -1,7 +1,8 @@
 name: easy_navi
 description: A new package that aims to make it easier to render a navigation widget
 version: 0.0.1
-homepage:
+homepage: https://github.com/srivats22/easy_navi
+maintainer: Srivats Venkataraman
 
 environment:
   sdk: '>=3.1.3 <4.0.0'

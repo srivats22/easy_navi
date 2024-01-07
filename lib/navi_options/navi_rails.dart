@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import '../DestinationObj.dart';
+import '../destination_obj.dart';
 
 class NaviRails extends StatefulWidget {
-  int currIndex;
-  List<Widget> children;
-  List<DestinationObj> destinations;
-  NaviRails(
+  final int currIndex;
+  final List<Widget> children;
+  final List<DestinationObj> destinations;
+  const NaviRails(
       {super.key,
         required this.currIndex,
         required this.children,
@@ -16,12 +16,13 @@ class NaviRails extends StatefulWidget {
 }
 
 class _NaviRailsState extends State<NaviRails> {
+  int? _currIndex;
   List<NavigationRailDestination>naviDest = [];
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
+    _currIndex = widget.currIndex;
     initializer();
   }
 
@@ -46,10 +47,10 @@ class _NaviRailsState extends State<NaviRails> {
         body: Row(
           children: [
             NavigationRail(
-              selectedIndex: widget.currIndex,
+              selectedIndex: _currIndex,
               onDestinationSelected: (selectedDest){
                 setState(() {
-                  widget.currIndex = selectedDest;
+                  _currIndex = selectedDest;
                 });
               },
               labelType: NavigationRailLabelType.all,
@@ -58,7 +59,7 @@ class _NaviRailsState extends State<NaviRails> {
             const VerticalDivider(),
             Expanded(
               child: Center(
-                child: widget.children.elementAt(widget.currIndex),
+                child: widget.children.elementAt(_currIndex!),
               ),
             ),
           ],

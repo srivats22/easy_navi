@@ -23,7 +23,7 @@ easy_navi allows you to define your destinations once and then use that to rende
 Import the following at the top of you file
 ```dart
 import 'package:easy_navi/navi.dart';
-import 'package:easy_navi/DestinationObj.dart';
+import 'package:easy_navi/destination_obj.dart';
 import 'package:easy_navi/navi_options/navi_rails.dart';
 import 'package:easy_navi/navi_options/navi_bottom.dart';
 ```

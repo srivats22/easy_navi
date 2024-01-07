@@ -2,8 +2,7 @@ import 'package:example/device_platform.dart';
 import 'package:example/screens/desktop.dart';
 import 'package:example/screens/mobile.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
-import 'package:easy_navi/DestinationObj.dart';
+import 'package:easy_navi/destination_obj.dart';
 
 class Navis extends StatefulWidget {
   const Navis({super.key});
