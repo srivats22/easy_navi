@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-Navi is a Flutter Package that makes adding navigation to your app simple.
+easy_navi is a Flutter Package that makes adding navigation to your app simple.
 It contains code for displaying a NavigationRail and NavigationBar
 
 ## Features
